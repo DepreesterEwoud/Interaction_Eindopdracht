@@ -87,7 +87,8 @@ const showChart = function (xValues, yValues, token) {
     console.log(labels);
     
     if(document.querySelector(".js-graph")){
-        html_graph.innerHTML = `<canvas id="myChart" style="width:10px;height:100%;></canvas>`;
+        //html_graph.innerHTML = `<canvas id="myChart" style="width:10px;height:100%;></canvas>`;
+        
         ctx = document.querySelector('#myChart').getContext('2d');
         var gradientFill = ctx.createLinearGradient(0, 0, 0, 800);
         gradientFill.addColorStop(0, color);
@@ -139,7 +140,7 @@ const showChart = function (xValues, yValues, token) {
         };
         
         myChart = new Chart(ctx, config);
-        myChart.update();
+        //myChart.update();
         
     };
     /* new Chart(ctx, {

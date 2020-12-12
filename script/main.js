@@ -34,11 +34,15 @@ const getDOM = function () {
 
 const enableListeners = function () {
     domSelect.addEventListener('change', function () {
-        document.querySelector('.c-grid').style.display='none';
-        document.getElementById('load').classList.add('loader');
+        document.getElementById('c-app-style').classList.remove('c-app');
+        document.getElementById('c-app-style').classList.add('c-app-none');
+        document.getElementById('c-opstart-load').classList.add('loading');
+        document.getElementById('c-opstart-load-bollen').classList.add('loader');
         setTimeout(()=>{
-            document.getElementById('load').classList.remove('loader');
-            document.querySelector('.c-grid').style.display='grid';
+            document.getElementById('c-opstart-load').classList.remove('loading');
+            document.getElementById('c-opstart-load-bollen').classList.remove('loader');
+            document.getElementById('c-app-style').classList.remove('c-app-none');
+            document.getElementById('c-app-style').classList.add('c-app');
             
         },2000)
         
@@ -102,11 +106,14 @@ const enableListeners = function () {
 }
 
 const init = function () {
-    document.querySelector('.c-grid').style.display='none';
-    document.getElementById('load').classList.add('loader');
+    document.getElementById('c-app-style').classList.add('c-app-none');
+    document.getElementById('c-opstart-load').classList.add('loading');
+    document.getElementById('c-opstart-load-bollen').classList.add('loader');
     setTimeout(()=>{
-        document.getElementById('load').classList.remove('loader');
-        document.querySelector('.c-grid').style.display='grid';
+        document.getElementById('c-opstart-load').classList.remove('loading');
+        document.getElementById('c-opstart-load-bollen').classList.remove('loader');
+        document.getElementById('c-app-style').classList.remove('c-app-none');
+        document.getElementById('c-app-style').classList.add('c-app');
         
     },2000)
     getDOM();

@@ -43,8 +43,8 @@
     /* font-sizes*/
     --root-font-size: 4px;
 
-    --regular: 400;
-    --bold: 700;
+    --root-regular: 400;
+    --root-bold: 700;
 
     
 }
@@ -67,7 +67,7 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: var(--regular);
+    font-weight: var(--root-regular);
 }
 
 *,
@@ -82,7 +82,8 @@ html {
 }
 
 ::selection {
-    color: white;
+    color: black;
+    background-color: white;
     text-shadow: none;
 }
 
@@ -120,7 +121,7 @@ h2{
 h1,
 h2,
 h3 {
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
 }
 
 hr {
@@ -157,14 +158,25 @@ select {
     width: 100%;
 }
 
+button{
+    font-family: inherit;
+}
+
+p{
+    font-weight: var(--root-regular);
+}
+
 /* 
 
 Loading
 
 */
 .loading{
+    margin-top: 20%;
     display: flex;
     justify-content: center;
+    
+    
 }
 
 .loader{
@@ -229,10 +241,13 @@ Loading
     Component: App
 */
 
-
-.c-grid {
+.c-app-none{
+    display: none;
+}
+.c-app {
     max-width: 500px;
     min-height: 100vh;
+    column-gap: var(--global-whitespace-md);
     display: grid;
     justify-content: center;
     align-items: center;
@@ -257,7 +272,7 @@ Loading
     line-height: calc(var(--global-baseline) * 10);
     ox-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     appearance: button;
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
   }
   
   .c-input__select:hover::before {
@@ -271,16 +286,41 @@ Loading
 
 .c-input__text::placeholder {
     color: var(--global-color-darkgray);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
 }
 
 
 /*
-    Component: fake button
+    Component: button
     ---
-    Class to put on all fake buttons
+    Class to put on all c-buttons
     
 */
+.c-button{
+    display: inline-block;
+    width: 30%;
+    height: 2.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: 1px;
+    background-color: #E1B376;
+    color:white;
+    margin-left: -5px;
+    font-weight: 600;
+    outline: none;
+}
+
+.c-button:hover,
+.c-button:active{
+    background-color: #F7CC71;
+}
+
+.c-button:focus,
+.c-input:focus{
+    border:2px solid #D40303;
+}
+
+/* Components */
 
 .c-label{
     font-weight: 600;
@@ -290,6 +330,7 @@ Loading
 }
 
 .c-input{
+    font-family: inherit;
     display: inline-block;
     width: 70%;
     height: 2.5rem;
@@ -308,7 +349,7 @@ Loading
 */
 
 .c-link-button {
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     text-decoration: none;
     padding: 8px 12px 8px;
     border: none;
@@ -336,7 +377,7 @@ Loading
     cursor: pointer;
     outline: 0;
     -webkit-appearance: none;
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
 }
 
 /* Custom */
@@ -347,7 +388,7 @@ Loading
     top: 0;
     background-color: transparent;
     color: var(--global-color-white);
-    border-radius: calc(var(--root-radius) * 3);
+    border-radius: 2px;
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
@@ -390,7 +431,8 @@ Loading
 */
 
 .c-show__updatetext{
-    padding-top: 22.5px;
+    margin-top: 26px;
+    font-weight: var(--root-regular);
 }
 
 .c-show__select {
@@ -419,13 +461,14 @@ Loading
 .c-show__percentage {
     text-align: center;
     color: var(--global-color-rood);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     font-size: calc(var(--root-font-size) * 5);
 }
 
 .c-show__diffrence {
+    
     color: var(--global-color-rood);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     font-size: calc(var(--root-font-size) * 4);
 }
 
@@ -450,7 +493,8 @@ Loading
     text-align: center;
 }
 
-.c-show__low {
+.c-info__left {
+    font-weight: var(--root-regular);
     color: var(--global-color-white);
     font-size: calc(var(--root-font-size) * 3.5);
     border-right: 1px var(--global-color-white) solid;
@@ -458,7 +502,8 @@ Loading
     margin-bottom: 5px;
 }
 
-.c-show__high {
+.c-info__right {
+    font-weight: var(--root-regular);
     color: var(--global-color-white);
     font-size: calc(var(--root-font-size) * 3.5);
     width: 50%;
@@ -468,22 +513,28 @@ Loading
     text-align: center;
     height: 72px;
     color: var(--global-color-white);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     font-size: calc(var(--root-font-size) * 4);
     border: 2px solid var(--global-border-color);
 }
 
-.c-show__highlow {
-    color: var(--global-color-white);
+.c-info {
+    /* color: var(--global-color-white);
     text-align: center;
     margin-left: 5px;
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     height: 72px;
+    font-size: calc(var(--root-font-size) * 4);
+    border: 2px solid var(--global-border-color); */
+    color: var(--global-color-white);
+    text-align: center;
+    font-weight: var(--root-bold);
+    padding: var(--global-whitespace-sm);
     font-size: calc(var(--root-font-size) * 4);
     border: 2px solid var(--global-border-color);
 }
 
-.c-show__row{
+.c-flex-items{
     display: flex;
 }
 
@@ -501,9 +552,9 @@ Loading
 }
 
 @media (min-width: 320px) {
-    .c-grid {
+    .c-app {
         
-        grid-template-rows: 70px 90px 80px 50px 50px 300px 50px 1fr;
+        grid-template-rows: 70px 100px 80px 50px 50px 260px 50px 1fr;
     }
     .c-show__graph {
         width: 360px;
@@ -514,10 +565,10 @@ Loading
 /* SMARTPHONES LANDSCAPE */
 @media(min-width: 480px) {
 
-    .c-grid {
+    .c-app {
 
         margin: auto;
-        grid-template-rows: 70px 90px 80px 50px 80px 300px 50px 1fr;
+        grid-template-rows: 70px 100px 80px 50px 80px 260px 50px 1fr;
     }
     .c-show__graph {
         width: 360px;
@@ -527,8 +578,8 @@ Loading
 
 /* TABLETS PORTRAIT */
 @media(min-width: 768px) {
-    .c-grid {
-        grid-template-rows: 60px 90px 80px 50px 80px 300px 50px;
+    .c-app {
+        grid-template-rows: 60px 100px 80px 50px 80px 280px 50px;
     }
 
     .c-show__graph {
@@ -544,8 +595,8 @@ Loading
 
 /* TABLET LANDSCAPE / DESKTOP */
 @media(min-width: 1024px) {
-    .c-grid {
-        grid-template-rows: 60px 90px 80px 50px 80px 330px 50px;
+    .c-app {
+        grid-template-rows: 60px 100px 80px 50px 60px 330px 50px;
     }
 
     .c-show__graph {
@@ -560,8 +611,8 @@ Loading
 }
 
 @media(min-width: 1400px) {
-    .c-grid {
-        grid-template-rows: 60px 90px 80px 50px 80px 330px 50px;
+    .c-app {
+        grid-template-rows: 60px 100px 80px 50px 60px 330px 50px;
     }   
 
     .c-show__graph {
@@ -580,7 +631,7 @@ Loading
 
 
 
-.c-gridindex {
+.c-appindex {
     
     display: grid;
     grid-gap: 1rem;
@@ -588,10 +639,10 @@ Loading
                          'mockup'
                          'informatie';
 }
-.c-gridindex__titel{
+.c-appindex__titel{
     argin-top: 15px;
     color: var(--global-color-white);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     font-size: calc(var(--root-font-size) * 7);
     grid-area: titel;
     justify-self: center;
@@ -601,9 +652,9 @@ Loading
     grid-area: mockup;
     justify-self: center;
 }
-.c-gridindex__informatie{
+.c-appindex__informatie{
     background-color: var(--global-color-white);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
     font-size: calc(var(--root-font-size) * 4);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -612,17 +663,17 @@ Loading
 }
 
 @media(min-width: 768px) {
-    .c-gridindex {
+    .c-appindex {
         display: grid;
         grid-gap: 1rem;
         grid-template-areas: 'titel titel'
                              'informatie mockup';
     }
-    .c-gridindex__titel{
+    .c-appindex__titel{
         vertical-align: center;
         argin-top: 15px;
         color: var(--global-color-white);
-        font-weight: var(--bold);
+        font-weight: var(--root-bold);
         font-size: calc(var(--root-font-size) * 10);
         grid-area: titel;
         justify-self: center;
@@ -633,7 +684,7 @@ Loading
         justify-self: center;
         verical-align: center;
     }
-    .c-gridindex__informatie{
+    .c-appindex__informatie{
         
         height: 100%;
         display: flex;
@@ -687,13 +738,13 @@ Loading
 .u-dollar-value {
     color: var(--global-color-green);
     font-size: calc(var(--root-font-size) * 3.5);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
 }
 
 .u-token {
     color: var(--global-color-white);
     font-size: calc(var(--root-font-size) * 3.5);
-    font-weight: var(--bold);
+    font-weight: var(--root-bold);
 }
 
 .u-euro-token {

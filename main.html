@@ -25,7 +25,7 @@
 </head>
 
 <body>
-        <div class="c-grid">
+        <div id="c-app-style">
                 <div class="c-app__item u-span-column-4">
                         <span class="c-input__select">
                                 <select class="js-select" name="selectCrypto"
@@ -40,23 +40,23 @@
                 </div>
 
                 <div class="c-app__item u-span-column-2">
-                        <div class="c-show__updated">
-                                <div class="c-info">Last price update</div>
-                                <div class="c-info c-show__updatetext js-updated"></div>
+                        <div class="c-info">
+                                <div class="">Last price update</div>
+                                <div class="c-show__updatetext js-updated"></div>
                         </div>
                         
                         
                 </div>
 
                 <div class="c-app__item u-span-column-2">
-                        <div class="c-show__highlow">
-                                <div class="c-info c-show__label-hours">Price past 24 hours</div>
-                                <div class="c-info c-show__diffrence js-diffrence"></div>
-                                <div class="c-show__row">
-                                        <div class="c-info c-show__low js-low">
+                        <div class="c-info">
+                                <div class="c-show__label-hours">Price past 24 hours</div>
+                                <div class="c-show__diffrence js-diffrence"></div>
+                                <div class="c-flex-items">
+                                        <div class="c-info__left js-low">
                                                 <div class="u-low">LOW</div>
                                         </div>
-                                        <div class="c-info c-show__high js-high">
+                                        <div class="c-info__right js-high">
                                                 <div class="u-high">HIGH</div>
                                         </div>
                                 </div>
@@ -64,59 +64,59 @@
                 </div>
                 
                 <div class="c-app__item u-span-column-4">
-                        <div class="c-info c-show__logo">
+                        <div class="c-show__logo">
                                 <img width="60px" height="60px" class="js-logo">
                         </div>
 
                 </div>
 
                 <div class="c-app__item u-span-column-4">
-                        <div class="c-info c-show__price">
+                        <div class="c-show__price">
                                 <span class="js-price"></span>
                                 <hr class="u-border-line">
                         </div>
                 </div>
 
                 <div class="c-app__item u-span-column-4">
-                        <div class="c-info c-show__percentage js-percentage">
+                        <div class="c-show__percentage js-percentage">
                         </div>
                 </div>
                 
 
                 <div class="c-app__item u-span-column-4">
-                        <div class="c-info c-show__graph js-graph">
+                        <div class="c-show__graph js-graph">
                                 <canvas id="myChart" width="40" height="25"></canvas>
                         </div>
                 </div>
 
                 <div class="c-app__item">
-                        <div class="c-info c-show__button-day js-button" data-value="7">
+                        <div class="c-show__button-day js-button" data-value="7">
                                 <button class="c-link-cta is-selected">Week</button>
                         </div>
                 </div>
 
                 <div class="c-app__item">
-                        <div class="c-info c-show__button-week js-button" data-value="30">
+                        <div class="c-show__button-week js-button" data-value="30">
                                 <button class="c-link-cta">Month</button>
                         </div>
                 </div>
 
                 <div class="c-app__item">
-                        <div class="c-info c-show__button-month js-button" data-value="186">
+                        <div class="c-show__button-month js-button" data-value="186">
                                 <button class="c-link-cta">½ Year</button>
                         </div>
                 </div>
 
                 <div class="c-app__item">
-                        <div class="c-info c-show__button-year js-button" data-value="365">
+                        <div class="c-show__button-year js-button" data-value="365">
                                 <button onclick="false" class="c-link-cta">Year</button>
                         </div>
                 </div>
 
                 
         </div>
-        <div class="loading">
-                <div id="load" class="loader"></div>
+        <div id="c-opstart-load">
+                <div id="c-opstart-load-bollen"></div>
         </div>
 </body>
 
