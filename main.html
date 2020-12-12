@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dashboard</title>
+
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Link to stylesheets -->
+        <link href="css/screen.css" rel="stylesheet">
+
+        <!-- Link to scripts -->
+        <script src="script/main.js"></script>
+        <script src="script/chart.js"></script>
+
+        <!-- Link to google fonts Oxygen font style -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+        <!-- Link for Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+
+</head>
+
+<body>
+        <div class="c-grid">
+                <div class="c-app__item u-span-column-4">
+                        <span class="c-input__select">
+                                <select class="js-select" name="selectCrypto"
+                                        id="selectCrypto">
+                                        <option value="BTC">BTC/EUR</option>
+                                        <option value="XRP">XRP/EUR</option>
+                                        <option value="ETC">ETC/EUR</option>
+                                        <option value="ETH">ETH/EUR</option>
+                                        <option value="BAT">BAT/EUR</option>
+                                </select>
+                        </span>
+                </div>
+
+                <div class="c-app__item u-span-column-2">
+                        <div class="c-show__updated">
+                                <div class="c-info">Last price update</div>
+                                <div class="c-info c-show__updatetext js-updated"></div>
+                        </div>
+                        
+                        
+                </div>
+
+                <div class="c-app__item u-span-column-2">
+                        <div class="c-show__highlow">
+                                <div class="c-info c-show__label-hours">Price past 24 hours</div>
+                                <div class="c-info c-show__diffrence js-diffrence"></div>
+                                <div class="c-show__row">
+                                        <div class="c-info c-show__low js-low">
+                                                <div class="u-low">LOW</div>
+                                        </div>
+                                        <div class="c-info c-show__high js-high">
+                                                <div class="u-high">HIGH</div>
+                                        </div>
+                                </div>
+                        </div>  
+                </div>
+                
+                <div class="c-app__item u-span-column-4">
+                        <div class="c-info c-show__logo">
+                                <img width="60px" height="60px" class="js-logo">
+                        </div>
+
+                </div>
+
+                <div class="c-app__item u-span-column-4">
+                        <div class="c-info c-show__price">
+                                <span class="js-price"></span>
+                                <hr class="u-border-line">
+                        </div>
+                </div>
+
+                <div class="c-app__item u-span-column-4">
+                        <div class="c-info c-show__percentage js-percentage">
+                        </div>
+                </div>
+                
+
+                <div class="c-app__item u-span-column-4">
+                        <div class="c-info c-show__graph js-graph">
+                                <canvas id="myChart" width="40" height="25"></canvas>
+                        </div>
+                </div>
+
+                <div class="c-app__item">
+                        <div class="c-info c-show__button-day js-button" data-value="7">
+                                <button class="c-link-cta is-selected">Week</button>
+                        </div>
+                </div>
+
+                <div class="c-app__item">
+                        <div class="c-info c-show__button-week js-button" data-value="30">
+                                <button class="c-link-cta">Month</button>
+                        </div>
+                </div>
+
+                <div class="c-app__item">
+                        <div class="c-info c-show__button-month js-button" data-value="186">
+                                <button class="c-link-cta">½ Year</button>
+                        </div>
+                </div>
+
+                <div class="c-app__item">
+                        <div class="c-info c-show__button-year js-button" data-value="365">
+                                <button onclick="false" class="c-link-cta">Year</button>
+                        </div>
+                </div>
+
+                
+        </div>
+        <div class="loading">
+                <div id="load" class="loader"></div>
+        </div>
+</body>
+
+</html>
