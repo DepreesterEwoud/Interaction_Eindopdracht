@@ -7,9 +7,9 @@
         <title>Startpagina</title>
 
         <!-- Link for favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/png/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/png/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/png/favicon-16x16.png">
         
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
@@ -20,8 +20,8 @@
         <!-- Link to google fonts Oxygen font style -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 
-        <!-- Link for Chart.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+        <!-- Link to mail validation-->
+        <script src="script/validation.js"></script>
 
 
 </head>
@@ -45,12 +45,19 @@
                         <p>Check the value of your favorite coin. You will find an overview from <br>the past period
                         and a statistic of how the coin is doing in the past 24hours.
                         </p>
+                        <label>Subscribe to our newsletter for important changes!</label>
                         <form action="#">
-                                <p>
-                                    <label class="c-label" for="username">
-                                        Subscribe to our newsletter for important changes!
+                                <p class="js-email-field">
+                                    <label class="c-label js-email-label" for="username">
+                                        Email address
+                                        <span class="c-label__error-message js-email-error-message">
+                                                This field is required
+                                            </span>
                                     </label>
-                                    <input class="c-input" type="email" placeholder="jan@janssens.com" required> <button class="c-button">Subscribe</button>
+                                    
+                                    <input class="c-input js-email-input" type="email" id="username" placeholder="jan@janssens.com" required> 
+                                    <button class="c-button js-sign-in-button" id="buttonstandard">Subscribe</button>
+                                    <button class="c-button-subscribed-none" id="buttonsubscribed">Subscribed!</button>
                                 </p>
                         </form>
                          
