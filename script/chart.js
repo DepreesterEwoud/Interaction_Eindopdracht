@@ -95,7 +95,7 @@ const showChart = function (xValues, yValues, token) {
         gradientFill.addColorStop(1, "transparent");
 
         let config = {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: labels,
                 datasets: [{
